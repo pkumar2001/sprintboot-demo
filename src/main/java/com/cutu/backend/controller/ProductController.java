@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController("/v1")
+@RestController()
+@CrossOrigin(origins = {"http://localhost:5173", "https://your-frontend-domain.com"}, methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS}, allowCredentials = "true")
 public class ProductController {
     private List<Product> products = new ArrayList<>();
 
